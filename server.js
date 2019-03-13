@@ -260,7 +260,7 @@ if (req.session.user == undefined)
       writeResult(req, res, {'error' : err});
     else
     {
-      con.query('DELETE FROM SONGS WHERE SNG_NAME = ?',[req.query.song], function (err, result, fields) 
+      con.query('DELETE FROM SONGS WHERE SNG_NAME = ? AND USR_ID= ?',[req.query.song,id], function (err, result, fields) 
       {
         if (err) 
           writeResult(req, res, {'error' : err});
